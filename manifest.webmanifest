@@ -1,0 +1,13 @@
+{
+  "name": "Painel lello.club",
+  "short_name": "Painel lello",
+  "description": "Controle remoto da tipografia do lello.club",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#17141c",
+  "theme_color": "#17141c",
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

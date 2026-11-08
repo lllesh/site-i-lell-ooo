@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Painel lello.club</title>
+<meta name="description" content="Controle remoto da tipografia do lello.club — tudo numa página só">
+<meta name="theme-color" content="#FFFBF3">
+<link rel="icon" href="/lello-og.png">
+<link rel="apple-touch-icon" href="/lello-og.png">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta property="og:title" content="Painel lello.club">
+<meta property="og:description" content="Controle remoto da tipografia do lello.club">
+<meta property="og:image" content="/lello-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Karla:wght@400;500;700&display=swap');
+
+  @font-face { font-family: 'Mesa'; src: url('./fonts/MesaRegular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Mesa'; src: url('./fonts/MesaBold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'NotMyType'; src: url('./fonts/not-my-type.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Jeffesta Bold Retro Pop Fonts'; src: url('./fonts/Jeffesta-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'pf0'; src: url('./fonts/pf/f0.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf1'; src: url('./fonts/pf/f1.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf2'; src: url('./fonts/pf/f2.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf3'; src: url('./fonts/pf/f3.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf4'; src: url('./fonts/pf/f4.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf5'; src: url('./fonts/pf/f5.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf6'; src: url('./fonts/pf/f6.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf7'; src: url('./fonts/pf/f7.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf8'; src: url('./fonts/pf/f8.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf9'; src: url('./fonts/pf/f9.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf10'; src: url('./fonts/pf/f10.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf11'; src: url('./fonts/pf/f11.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf12'; src: url('./fonts/pf/f12.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf13'; src: url('./fonts/pf/f13.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf14'; src: url('./fonts/pf/f14.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf15'; src: url('./fonts/pf/f15.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf16'; src: url('./fonts/pf/f16.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf17'; src: url('./fonts/pf/f17.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf18'; src: url('./fonts/pf/f18.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf19'; src: url('./fonts/pf/f19.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf20'; src: url('./fonts/pf/f20.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf21'; src: url('./fonts/pf/f21.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf22'; src: url('./fonts/pf/f22.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf23'; src: url('./fonts/pf/f23.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf24'; src: url('./fonts/pf/f24.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf25'; src: url('./fonts/pf/f25.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf26'; src: url('./fonts/pf/f26.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf27'; src: url('./fonts/pf/f27.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf28'; src: url('./fonts/pf/f28.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf29'; src: url('./fonts/pf/f29.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf30'; src: url('./fonts/pf/f30.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf31'; src: url('./fonts/pf/f31.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf32'; src: url('./fonts/pf/f32.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf33'; src: url('./fonts/pf/f33.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf34'; src: url('./fonts/pf/f34.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf35'; src: url('./fonts/pf/f35.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf36'; src: url('./fonts/pf/f36.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf37'; src: url('./fonts/pf/f37.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf38'; src: url('./fonts/pf/f38.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf39'; src: url('./fonts/pf/f39.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf40'; src: url('./fonts/pf/f40.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf41'; src: url('./fonts/pf/f41.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf42'; src: url('./fonts/pf/f42.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf43'; src: url('./fonts/pf/f43.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf44'; src: url('./fonts/pf/f44.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf45'; src: url('./fonts/pf/f45.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf46'; src: url('./fonts/pf/f46.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf47'; src: url('./fonts/pf/f47.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf48'; src: url('./fonts/pf/f48.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf49'; src: url('./fonts/pf/f49.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf50'; src: url('./fonts/pf/f50.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf51'; src: url('./fonts/pf/f51.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf52'; src: url('./fonts/pf/f52.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf53'; src: url('./fonts/pf/f53.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf54'; src: url('./fonts/pf/f54.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf55'; src: url('./fonts/pf/f55.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf56'; src: url('./fonts/pf/f56.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf57'; src: url('./fonts/pf/f57.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf58'; src: url('./fonts/pf/f58.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf59'; src: url('./fonts/pf/f59.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf60'; src: url('./fonts/pf/f60.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf61'; src: url('./fonts/pf/f61.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf62'; src: url('./fonts/pf/f62.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf63'; src: url('./fonts/pf/f63.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf64'; src: url('./fonts/pf/f64.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf65'; src: url('./fonts/pf/f65.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf66'; src: url('./fonts/pf/f66.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf67'; src: url('./fonts/pf/f67.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf68'; src: url('./fonts/pf/f68.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf69'; src: url('./fonts/pf/f69.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf70'; src: url('./fonts/pf/f70.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf71'; src: url('./fonts/pf/f72.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf72'; src: url('./fonts/pf/f73.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf73'; src: url('./fonts/pf/f74.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf74'; src: url('./fonts/pf/f75.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf75'; src: url('./fonts/pf/f76.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf76'; src: url('./fonts/pf/f77.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf77'; src: url('./fonts/pf/f78.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf78'; src: url('./fonts/pf/f79.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf79'; src: url('./fonts/pf/f80.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf80'; src: url('./fonts/pf/f81.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf81'; src: url('./fonts/pf/f82.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf82'; src: url('./fonts/pf/f83.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf83'; src: url('./fonts/pf/f84.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf84'; src: url('./fonts/pf/f85.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf85'; src: url('./fonts/pf/f87.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf86'; src: url('./fonts/pf/f88.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf87'; src: url('./fonts/pf/f89.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf88'; src: url('./fonts/pf/f91.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf89'; src: url('./fonts/pf/f92.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf90'; src: url('./fonts/pf/f93.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf91'; src: url('./fonts/pf/f94.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf92'; src: url('./fonts/pf/f95.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf93'; src: url('./fonts/pf/f96.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf94'; src: url('./fonts/pf/f97.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf95'; src: url('./fonts/pf/f98.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf96'; src: url('./fonts/pf/f99.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf97'; src: url('./fonts/pf/f100.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf98'; src: url('./fonts/pf/f101.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf99'; src: url('./fonts/pf/f102.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf100'; src: url('./fonts/pf/f103.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf101'; src: url('./fonts/pf/f104.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf102'; src: url('./fonts/pf/f105.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf103'; src: url('./fonts/pf/f107.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf104'; src: url('./fonts/pf/f108.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf105'; src: url('./fonts/pf/f109.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf106'; src: url('./fonts/pf/f110.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf107'; src: url('./fonts/pf/f111.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf108'; src: url('./fonts/pf/f112.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf109'; src: url('./fonts/pf/f113.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf110'; src: url('./fonts/pf/f114.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf111'; src: url('./fonts/pf/f116.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf112'; src: url('./fonts/pf/f117.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf113'; src: url('./fonts/pf/f118.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf114'; src: url('./fonts/pf/f119.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf115'; src: url('./fonts/pf/f120.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf116'; src: url('./fonts/pf/f121.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf117'; src: url('./fonts/pf/f122.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf118'; src: url('./fonts/pf/f123.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf119'; src: url('./fonts/pf/f125.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf120'; src: url('./fonts/pf/f126.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf121'; src: url('./fonts/pf/f127.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf122'; src: url('./fonts/pf/f128.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf123'; src: url('./fonts/pf/f129.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf124'; src: url('./fonts/pf/f130.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf125'; src: url('./fonts/pf/f131.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf126'; src: url('./fonts/pf/f133.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf127'; src: url('./fonts/pf/f132.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf128'; src: url('./fonts/pf/f134.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf129'; src: url('./fonts/pf/f136.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf130'; src: url('./fonts/pf/f137.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf131'; src: url('./fonts/pf/f138.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf132'; src: url('./fonts/pf/f139.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf133'; src: url('./fonts/pf/f140.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf134'; src: url('./fonts/pf/f141.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf135'; src: url('./fonts/pf/f142.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf136'; src: url('./fonts/pf/f143.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf137'; src: url('./fonts/pf/f144.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf138'; src: url('./fonts/pf/f146.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf139'; src: url('./fonts/pf/f147.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf140'; src: url('./fonts/pf/f149.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf141'; src: url('./fonts/pf/f150.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf142'; src: url('./fonts/pf/f151.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf143'; src: url('./fonts/pf/f152.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf144'; src: url('./fonts/pf/f153.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf145'; src: url('./fonts/pf/f154.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf146'; src: url('./fonts/pf/f156.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf147'; src: url('./fonts/pf/f157.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf148'; src: url('./fonts/pf/f158.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf149'; src: url('./fonts/pf/f159.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf150'; src: url('./fonts/pf/f160.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf151'; src: url('./fonts/pf/f161.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf152'; src: url('./fonts/pf/f162.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf153'; src: url('./fonts/pf/f163.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf154'; src: url('./fonts/pf/f164.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf155'; src: url('./fonts/pf/f165.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf156'; src: url('./fonts/pf/f166.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf157'; src: url('./fonts/pf/f167.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf158'; src: url('./fonts/pf/f168.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf159'; src: url('./fonts/pf/f169.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf160'; src: url('./fonts/pf/f170.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf161'; src: url('./fonts/pf/f171.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf162'; src: url('./fonts/pf/f172.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf163'; src: url('./fonts/pf/f173.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf164'; src: url('./fonts/pf/f174.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf165'; src: url('./fonts/pf/f175.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf166'; src: url('./fonts/pf/f176.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf167'; src: url('./fonts/pf/f177.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf168'; src: url('./fonts/pf/f178.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf169'; src: url('./fonts/pf/f179.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf170'; src: url('./fonts/pf/f180.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf171'; src: url('./fonts/pf/f181.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf172'; src: url('./fonts/pf/f182.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf173'; src: url('./fonts/pf/f184.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf174'; src: url('./fonts/pf/f185.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf175'; src: url('./fonts/pf/f187.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf176'; src: url('./fonts/pf/f188.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf177'; src: url('./fonts/pf/f189.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf178'; src: url('./fonts/pf/f190.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf179'; src: url('./fonts/pf/f191.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf180'; src: url('./fonts/pf/f192.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf181'; src: url('./fonts/pf/f193.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf182'; src: url('./fonts/pf/f194.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf183'; src: url('./fonts/pf/f195.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf184'; src: url('./fonts/pf/f196.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf185'; src: url('./fonts/pf/f198.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf186'; src: url('./fonts/pf/f200.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf187'; src: url('./fonts/pf/f201.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf188'; src: url('./fonts/pf/f202.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf189'; src: url('./fonts/pf/f203.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf190'; src: url('./fonts/pf/f204.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf191'; src: url('./fonts/pf/f205.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf192'; src: url('./fonts/pf/f206.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf193'; src: url('./fonts/pf/f207.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf194'; src: url('./fonts/pf/f208.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'pf195'; src: url('./fonts/pf/f209.woff2') format('woff2'); font-display: swap; }
+
+  :root {
+    --bg: #FFFBF3;
+    --ink: #241f2e;
+    --rosa: #F48591;
+    --coral: #FA8D85;
+    --pessego: #FEA283;
+    --laranja: #FFB872;
+    --salvia: #8DA599;
+    --periwinkle: #8D96C1;
+    --malva: #C18EA9;
+    --font-ui: 'Manrope', sans-serif;
+    --font-body: 'Karla', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { min-height: 100%; background: var(--bg); }
+  body {
+    font-family: var(--font-body);
+    color: var(--ink);
+    padding: clamp(20px, 6vw, 96px) 120px;
+  }
+  @media (max-width: 1023px) {
+    body { padding-left: 24px; padding-right: 24px; }
+  }
+
+  .pagina {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 3vh, 40px);
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .kicker {
+    font-family: var(--font-ui);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(36,31,46,.55);
+  }
+  h1 {
+    font-family: var(--font-ui);
+    font-weight: 800;
+    font-size: clamp(24px, 2.6vw, 34px);
+    letter-spacing: -.01em;
+    margin-top: 4px;
+  }
+
+  .status {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: var(--salvia);
+    color: #1e2f26;
+  }
+
+  .alvo {
+    display: inline-flex;
+    gap: 14px;
+    width: fit-content;
+  }
+  .alvo button {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -.02em;
+    text-transform: lowercase;
+    border: none;
+    background: rgba(36,31,46,.06);
+    color: rgba(36,31,46,.6);
+    padding: 16px 30px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .alvo button.ativo { background: var(--ink); color: #fff; }
+
+  /* ---------- prévia ---------- */
+  .previa {
+    --carta-raio: 140px;
+    position: relative;
+    background: var(--periwinkle);
+    border-radius: var(--carta-raio);
+    aspect-ratio: 1344 / 726;
+    overflow-y: auto;
+    box-shadow: 0 24px 60px rgba(36,31,46,.18);
+    padding: clamp(90px, 11vw, 170px) clamp(40px, 5vw, 80px) clamp(40px, 5vw, 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: clamp(40px, 5vw, 64px);
+  }
+  .previa .duas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(40px, 6vw, 76px);
+    width: var(--bloco-w, 78%);
+    font-size: clamp(20px, 1.4vw, 24px);
+  }
+  .previa .rotulo-mini {
+    font-family: var(--font-ui);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    opacity: .75;
+    margin-bottom: 14px;
+    display: block;
+  }
+  #amostraHeading { text-wrap: balance; max-width: 100%; }
+  #amostraBody { max-width: 100%; }
+
+  /* ---------- controles coloridos, translúcidos por cima do texto ---------- */
+  .pilulas {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    padding: clamp(40px, 6vw, 90px);
+    background: transparent;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(.98);
+    transition: opacity .25s ease, transform .25s ease, visibility 0s .25s;
+  }
+  .pilulas .painel { opacity: .22; }
+  .alinhar-botoes {
+    flex: 1;
+    display: flex;
+    gap: 8px;
+  }
+  .alinhar-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255,255,255,.22);
+    color: var(--bg);
+    cursor: pointer;
+  }
+  .alinhar-btn svg { width: 20px; height: 20px; }
+  .alinhar-btn.ativo { background: rgba(255,255,255,.9); color: var(--ink); }
+  .previa.controles-abertos .pilulas {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: opacity .25s ease, transform .25s ease;
+  }
+  .pontinho {
+    position: fixed;
+    top: clamp(48px, 7vw, 76px);
+    right: clamp(48px, 7vw, 76px);
+    z-index: 50;
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    border: none;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(36,31,46,.35);
+    cursor: pointer;
+    padding: 0;
+  }
+  .previa.controles-abertos .pontinho { background: #fff; }
+  .pilula {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 56px;
+    background: rgba(255,255,255,.14);
+    border-radius: 9999px;
+    padding: 0 16px;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,.08);
+    transition: transform .2s ease-out;
+  }
+  .pilula:hover { transform: translateY(-2px) scale(1.01); }
+  .pilula:active { transform: translateY(0) scale(.98); }
+  .pilula .pilula-label {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    opacity: .8;
+    white-space: nowrap;
+    width: 90px;
+    flex-shrink: 0;
+  }
+  .pilula .pilula-valor {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 13px;
+    width: 90px;
+    flex-shrink: 0;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .pilula input[type="range"] {
+    flex: 1;
+    min-width: 0;
+  }
+  .pilula select.fonte-painel {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  select.fonte-painel {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    color: var(--bg);
+    background: rgba(255,255,255,.18);
+    border: none;
+    border-radius: 999px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  select.fonte-painel option { color: var(--ink); }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--bg);
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 7px; height: 26px;
+    margin-top: -11px;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,.25);
+    cursor: pointer;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 7px; height: 26px;
+    border: none;
+    border-radius: 3px;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .rotulo-painel {
+    font-family: var(--font-ui);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    opacity: .85;
+  }
+
+  /* ---------- pílulas coloridas, no molde exato da pílula do portrait.boook.ing ---------- */
+  .painel {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 74px;
+    border-radius: 9999px;
+    padding: 0 34px;
+    color: var(--bg);
+    transition: transform .2s ease-out;
+  }
+  .painel.painel-fonte {
+    height: clamp(200px, 26vh, 320px);
+    border-radius: 48px;
+    padding: 0;
+    overflow: hidden;
+  }
+  .fonte-roda {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+  }
+  .fonte-roda::-webkit-scrollbar { display: none; }
+  .fonte-roda-track { display: flex; flex-direction: column; height: 100%; }
+  .fonte-item, .fonte-spacer {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    height: clamp(60px, 9vh, 100px);
+  }
+  .fonte-spacer { height: calc(50% - clamp(60px, 9vh, 100px) / 2); }
+  .fonte-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    color: var(--bg);
+    padding: 0 30px;
+    font-weight: 700;
+    font-size: clamp(15px, 2vw, 20px);
+    opacity: .32;
+    transform: scale(.75);
+    transition: opacity .25s ease, transform .25s ease;
+    cursor: pointer;
+  }
+  .fonte-item span {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+  }
+  .fonte-item.ativa {
+    opacity: 1;
+    transform: scale(1);
+    font-weight: 800;
+    font-size: clamp(22px, 3.6vw, 36px);
+  }
+  @media (min-width: 1024px) {
+    .painel { height: 92px; padding: 0 44px; }
+    .painel .rotulo-painel { font-size: 16px; width: 110px; }
+    .painel .valor-painel { font-size: 15px; width: 110px; }
+    .painel select.fonte-painel { font-size: 16px; }
+  }
+  .painel:hover { transform: translateY(-2px) scale(1.01); }
+  .painel:active { transform: translateY(0) scale(.98); }
+  .painel .rotulo-painel {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 100px;
+    flex-shrink: 0;
+  }
+  .painel .valor-painel {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 14px;
+    width: 100px;
+    flex-shrink: 0;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .painel input[type="range"] {
+    flex: 1;
+    min-width: 0;
+  }
+  .painel select.fonte-painel {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+  .instalada-tag {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 12px;
+    opacity: .8;
+  }
+
+  .painel input.recado-input {
+    flex: 1;
+    align-self: center;
+    height: 46px;
+    min-width: 0;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--bg);
+    background: rgba(255,255,255,.18);
+    border: none;
+    border-radius: 999px;
+    padding: 0 18px;
+  }
+  .painel input.recado-input::placeholder { color: rgba(255,251,243,.65); }
+  @media (min-width: 1024px) {
+    .painel input.recado-input { font-size: 16px; padding: 0 22px; }
+  }
+
+  footer { text-align: center; font-size: 13px; color: rgba(36,31,46,.4); }
+
+  @media (max-width: 560px) {
+    .pilula { padding: 0 14px; gap: 12px; }
+    .pilula .pilula-label, .pilula .pilula-valor { width: 64px; }
+  }
+
+  @media (max-width: 640px) {
+    .previa .duas { font-size: clamp(15px, 3.6vw, 18px); }
+  }
+
+  @media (max-width: 1023px) {
+    .previa {
+      --carta-raio: 50px;
+      aspect-ratio: 342 / 607;
+      border-radius: var(--carta-raio);
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="pagina">
+  <div class="previa" id="cartaTexto">
+    <div class="duas">
+      <div>
+        <h2 id="amostraHeading" style="font-weight:700;">0 / Parto</h2>
+      </div>
+      <div>
+        <p id="amostraBody">Era madrugada quando entendi que o corpo já sabia o caminho antes de mim. Não é sobre ter medo — é sobre confiar numa história que também é minha, mesmo quando eu ainda não sei como ela termina.</p>
+      </div>
+    </div>
+
+    <button type="button" class="pontinho" id="pontinhoAbrir" aria-label="abrir controles"></button>
+
+    <div class="pilulas">
+      <div class="painel painel-fonte" style="background:var(--rosa);">
+        <div class="fonte-roda" id="fonteRoda">
+          <div class="fonte-roda-track" id="fonteRodaTrack"></div>
+        </div>
+      </div>
+      <div class="painel" style="background:var(--coral);">
+        <span class="rotulo-painel">peso</span>
+        <input type="range" id="weightRange" min="300" max="900" step="100">
+        <span class="valor-painel" id="weightVal"></span>
+      </div>
+      <div class="painel" style="background:var(--pessego);">
+        <span class="rotulo-painel">tamanho</span>
+        <input type="range" id="sizeRange" min="80" max="170" step="2">
+        <span class="valor-painel" id="sizeVal"></span>
+      </div>
+      <div class="painel" style="background:var(--laranja);">
+        <span class="rotulo-painel">letras</span>
+        <input type="range" id="trackingRange" min="-0.06" max="0.04" step="0.005">
+        <span class="valor-painel" id="trackingVal"></span>
+      </div>
+      <div class="painel" style="background:var(--salvia);">
+        <span class="rotulo-painel">linhas</span>
+        <input type="range" id="leadingRange" min="1" max="2.2" step="0.05">
+        <span class="valor-painel" id="leadingVal"></span>
+      </div>
+      <div class="painel" style="background:var(--malva);">
+        <span class="rotulo-painel">largura</span>
+        <input type="range" id="widthRange" min="30" max="100" step="2">
+        <span class="valor-painel" id="widthVal"></span>
+      </div>
+      <div class="painel" style="background:var(--rosa);">
+        <span class="rotulo-painel">alinhar</span>
+        <div class="alinhar-botoes" id="alinharBotoes">
+          <button type="button" class="alinhar-btn" data-align="left" aria-label="alinhar à esquerda">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="18" y2="18"/></svg>
+          </button>
+          <button type="button" class="alinhar-btn" data-align="center" aria-label="centralizar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+          </button>
+          <button type="button" class="alinhar-btn" data-align="right" aria-label="alinhar à direita">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="9" y1="12" x2="21" y2="12"/><line x1="6" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <button type="button" class="alinhar-btn" data-align="justify" aria-label="justificar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>lello.club · controle remoto</footer>
+</div>
+
+<script>
+(function () {
+  var FONT_NAMES = ["Agera Gothic Modern And Classic Elegant Font","Aigon Bold Display Font","Aspect","Atomic Blip A Retro Futuristic Font","Auditorium","Baby Shower Time Handwritten Display Font","Bague Scout Bold Sans Serif Font","Barcurly Curly Display Font","Bascho","Bask","Bearwood","Before Breakfast Font","Bintang Remis Brush Script","Blockline Bold Sans Serif Font","Blockpaper Photocopy Street Display Font 01","Bloopster Bold Display Font","Blurpie Bold Chunkie Display Font","Bold Chunky Sans Serif Font Coteza","Bold Riley Font","Boldega Bold Geometric Display Typeface","Bolte","Bringbold Nineties 90s Retro Bold Serif Font","Briscia A Graceful Timeless Script Font","Brook","Bubu Notes Cute Handwritten Font","Bukbon Regular","Bumboo Bold Display Font","Buttervale Playful Curly Font","Calera Display Hand Drawn Display Font","Casa Lienta Warm Contemporary Script Typeface","Casual Human Fonts","Cd Freiburg","Chalets Vintage Typeface","Chrunchie Pie Playful Font","Chunkie Bob Bold Display Font","Cimo One Bold Sans Serif Font","Combat Handdrawn Display Font","Coreva Sans Serif Font","Cote Lumiere Coastal Script Font","Craten Modern Variable Branding Sans","Crayole Scribbles Handwritten Font","Cream Whip Script Bold Retro Brush Font","Dark Seas Five Styles","Dassie Expanded Display Fonts","Day Coast Display Grunge Font","Deskara Sans Serif Display Font","Digital","Digital Nomad","Dirtbag","Disctactor","Doodly Rays Playful Display Font","Dr Boysk Sans Serif Pop Display Font","Dream Stage Bold Display Font","Drinks Fruit Sans Serif Display","Dusklight Script Vintage Forest Font","Far Out","Fatstar Bold Display Font","Flower Glory","Fontda","Fresco Vintage Authentic Retro Duo Typeface","Froople Playful Display Font","Funk Gibson Display Font","Garfato Display Sans Serif","Gatelli A Bold Geometric Sans Serif Font","Gazie Script","Gemoy Display","Gomenasans","Gopane Bold Display Font","Grandstones","Gravy Wilde Sans Serif Font","Grift","Gronk Chunky Display Font","Groovy Mythos","Groovy Souls","Groovy Texbox","Groovy Unite","Hard Block Bold Chunky Rounded Sans Serif Font","Helvena Grotesk Modern Bold Brand Identity Font","Hey Tiny Playful Font Family","Hitchcut","Hoagie Brush Font","Hopewishly Organic Brush Script","Hurtmore Scribbles Font","Hype","Jeffesta Bold Retro Pop Fonts","Joy Rush Sans Serif Display Font","Juicy Fruti Bold Retro Display Font","Kolta Bold Chunky Script","Krumple Display Font","Kurdis Geometric Sans Family 30 Styles","Laipa Soft Typeface","Lemota Font","Lenia Sans A Modern Geometric Sans Serif Family","Les Noir Handwritten Font","Longyards","Love Letters","Lunar Pop Bold Fun Display Font","Marow Block","Mellow Burgundy Handwritten Svg Font","Merch Regular Thin","Mister Rooster Font","Modern Urban Font Boomme","Monstral Bold Display Sans","Mooky Bold Display Font","More Sugar Font","Moreganic Organic Font","Mornie Modern Bold Sans Serif","Morsea Handdrawn Bold Font","Munky Font","Newsroom","Niko Bold Sports Display Font","Noira Soft Organic Display Typeface","Nope","Nority Inktrap Bold Font","Now Breaks Bold Sand Display","Oasley Retro Script Typeface","Oddberry Display Font","Oldport Script Nostalgic Handwritten Typeface","Orange Fogue Svg Font","Orelio Modern Bold Branding Font","Palm Coast Bold Retro Display Font","Palmist Svg Script Font","Paradigm","Paragraph","Paris Rebel Rough Handwritten Font","Pc Merchis Modern Brutalism Font","Peach More","Peachy Rebels Playful Font","Persona","Pillow Chunk Bold Retro Display Font","Pitch","Playloop","Ploonky Display Sans Serif Font","Plumpika Display Font","Porta Cova Display Font","Postmark Typewriter","Principle","Purple Magic 3d Svg Font","Quible","Quick Mind Bold Sans Serif Display Font","Quickly","Rangs Kalore Bold Sans Serif Font","Rapid Squad Modern Sans Serif Font","Redvale Retro Display Font","Reflect","Regtian","Relation De Luxe Font Duo","Retro Brunch Sans Rounded Display Font","Retro Byte Vintage 8bit Video Game Font","Revision","Roille Retro Script Classic","Roketto Retro Bold Display Font","Rolan Food Logo Font","Rough Tagline Handwritten Display Font","Round Bold Font For Food Branding Gelipo","Roundhe","Seaside Courier Handmade Sans Script Font Duo","Seatren Bold Sans Display Font","Selantic Bold Brush Font","Set List","Sinome Quirky Retro Display Font","Slideback A Stylish Modern Display Script","Smacko Retro Bold Reverse Condensed Sans Serif","Snarky Display Font","Snorble Sans Serif Display Font","Softsketch Creative Display Fonts","Southbased","Splish Splash","Spotlight","Sprout Pop Bold Retro Display Font","Sunkind Display Playful Retro Mixed Font","Sunkiss Muse Summer Retro Display Sans Script","Sunny Side","Sunset Script Handwritten Font","Super Meaty Retro Bold Display Font","Superbusy Activity Fun Pairing Font","Technul Regular","Technul Regular Soft","The Burcey Fun Display Font","The Reporter","The Untold Story Quotable Font","Thelawss Retro Funky Font","Thinkmore Playful Wide Font","Thumpa Bold Sans Serif","Todari Bold Food Display Font","Tonia","Trivane Bold Retro Reverse Contrast","Triver Bold Inktrap Font","Tropic Fresh Vintage Bold Serif Font","Tuck Shop Font","Twicker Playful Sketch Font","Unspoken Story Handwritten","Vank Strong Bold Condensed","Vlox Spray Hand Drawn Typeface","Warto Display Cute Bubble Font For Kids","West Paras Sans","Wildhorse Canyon","Wobico","Worthbites Display Font","Woster Sans","Zesty Scribs A Playful Script Font"];
+  var INSTALLED = { 'Mesa': true, 'NotMyType': true };
+  var PF_COUNT = 196;
+  for (var pfi = 0; pfi < PF_COUNT && pfi < FONT_NAMES.length; pfi++) {
+    INSTALLED[FONT_NAMES[pfi]] = 'pf' + pfi;
+  }
+  INSTALLED['Jeffesta Bold Retro Pop Fonts'] = 'Jeffesta Bold Retro Pop Fonts';
+  var weightLabels = { 300: 'light', 400: 'regular', 500: 'medium', 600: 'semibold', 700: 'bold', 800: 'extrabold', 900: 'black' };
+
+  var DEFAULTS = {
+    body: { font: 'Mesa', weight: 700, letterSpacing: -0.02, lineHeight: 1.75, fontSize: 114 },
+    heading: { font: 'Mesa', weight: 700, letterSpacing: -0.02, lineHeight: 1.2, fontSize: 114 }
+  };
+  var state = { body: Object.assign({}, DEFAULTS.body), heading: Object.assign({}, DEFAULTS.heading), note: '', blocoLargura: 78, alinhar: 'left' };
+  var alvo = 'body';
+
+  function fontStack(name) {
+    var fam = INSTALLED[name];
+    if (fam === true) return "'" + name + "', sans-serif";
+    if (typeof fam === 'string') return "'" + fam + "', sans-serif";
+    return "ui-sans-serif, system-ui, sans-serif";
+  }
+
+  var ALL_FONTS = ['Mesa', 'NotMyType'].concat(FONT_NAMES);
+
+  function montarRoda() {
+    var track = document.getElementById('fonteRodaTrack');
+    var html = '<div class="fonte-spacer"></div>';
+    html += ALL_FONTS.map(function (name) {
+      return '<div class="fonte-item" data-font="' + name.replace(/"/g, '&quot;') + '"><span style="font-family:' + fontStack(name) + '">' + name + '</span></div>';
+    }).join('');
+    html += '<div class="fonte-spacer"></div>';
+    track.innerHTML = html;
+    track.querySelectorAll('.fonte-item').forEach(function (el) {
+      el.addEventListener('click', function () {
+        el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      });
+    });
+    var roda = document.getElementById('fonteRoda');
+    var pendente = null;
+    roda.addEventListener('scroll', function () {
+      atualizarRodaAtiva();
+      clearTimeout(pendente);
+      pendente = setTimeout(function () {
+        var ativo = track.querySelector('.fonte-item.ativa');
+        if (ativo) {
+          var nome = ativo.getAttribute('data-font');
+          if (nome !== state[alvo].font) {
+            state[alvo].font = nome;
+            renderControles();
+            renderPrevia();
+            agendarSalvar();
+          }
+        }
+      }, 120);
+    });
+  }
+
+  function atualizarRodaAtiva() {
+    var roda = document.getElementById('fonteRoda');
+    var centro = roda.getBoundingClientRect().top + roda.clientHeight / 2;
+    var itens = roda.querySelectorAll('.fonte-item');
+    var maisProximo = null, menorDist = Infinity;
+    itens.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      var dist = Math.abs((r.top + r.height / 2) - centro);
+      if (dist < menorDist) { menorDist = dist; maisProximo = el; }
+    });
+    itens.forEach(function (el) { el.classList.toggle('ativa', el === maisProximo); });
+  }
+
+  function scrollRodaPara(nome, suave) {
+    var track = document.getElementById('fonteRodaTrack');
+    var alvoEl = track.querySelector('.fonte-item[data-font="' + nome.replace(/"/g, '\\"') + '"]');
+    if (alvoEl) alvoEl.scrollIntoView({ block: 'center', behavior: suave ? 'smooth' : 'auto' });
+  }
+
+  function renderControles() {
+    var t = state[alvo];
+    document.getElementById('weightRange').value = t.weight;
+    document.getElementById('weightVal').textContent = t.weight + ' · ' + (weightLabels[t.weight] || '');
+    document.getElementById('sizeRange').value = t.fontSize;
+    document.getElementById('sizeVal').textContent = t.fontSize + '%';
+    document.getElementById('trackingRange').value = t.letterSpacing;
+    document.getElementById('trackingVal').textContent = t.letterSpacing.toFixed(3) + 'em';
+    document.getElementById('leadingRange').value = t.lineHeight;
+    document.getElementById('leadingVal').textContent = t.lineHeight.toFixed(2);
+    document.getElementById('widthRange').value = state.blocoLargura;
+    document.getElementById('widthVal').textContent = state.blocoLargura + '%';
+  }
+
+  function renderPrevia() {
+    var h = state.heading, b = state.body;
+    ['amostraHeading', 'amostraHeading2'].forEach(function (id) {
+      var hEl = document.getElementById(id);
+      if (!hEl) return;
+      hEl.style.fontFamily = fontStack(h.font);
+      hEl.style.fontWeight = h.weight;
+      hEl.style.letterSpacing = h.letterSpacing + 'em';
+      hEl.style.lineHeight = h.lineHeight;
+      hEl.style.fontSize = (h.fontSize / 100 * 2.1) + 'em';
+    });
+    ['amostraBody', 'amostraBody2'].forEach(function (id) {
+      var bEl = document.getElementById(id);
+      if (!bEl) return;
+      bEl.style.fontFamily = fontStack(b.font);
+      bEl.style.fontWeight = b.weight;
+      bEl.style.letterSpacing = b.letterSpacing + 'em';
+      bEl.style.lineHeight = b.lineHeight;
+      bEl.style.fontSize = (b.fontSize / 100) + 'em';
+      bEl.style.textAlign = state.alinhar;
+    });
+  }
+
+  function renderLayout() {
+    document.querySelector('.previa').style.setProperty('--bloco-w', state.blocoLargura + '%');
+  }
+
+  var salvarPendente = null;
+  function agendarSalvar() {
+    clearTimeout(salvarPendente);
+    salvarPendente = setTimeout(function () {
+      fetch('/api/estado', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ body: state.body, heading: state.heading, blocoLargura: state.blocoLargura, alinhar: state.alinhar })
+      }).catch(function () {});
+    }, 500);
+  }
+
+  function carregarEstado() {
+    fetch('/api/estado').then(function (r) { return r.json(); }).then(function (dados) {
+      if (!dados) return;
+      if (dados.body) Object.assign(state.body, dados.body);
+      if (dados.heading) Object.assign(state.heading, dados.heading);
+      if (typeof dados.blocoLargura === 'number') state.blocoLargura = dados.blocoLargura;
+      if (dados.alinhar) state.alinhar = dados.alinhar;
+      renderControles();
+      renderPrevia();
+      renderLayout();
+      scrollRodaPara(state[alvo].font, false);
+      document.querySelectorAll('#alinharBotoes .alinhar-btn').forEach(function (b) {
+        b.classList.toggle('ativo', b.getAttribute('data-align') === state.alinhar);
+      });
+    }).catch(function () {});
+  }
+
+  function attach() {
+    var cartaTexto = document.getElementById('cartaTexto');
+    document.getElementById('pontinhoAbrir').addEventListener('click', function () {
+      cartaTexto.classList.toggle('controles-abertos');
+    });
+
+    document.querySelectorAll('#alinharBotoes .alinhar-btn').forEach(function (btn) {
+      if (btn.getAttribute('data-align') === state.alinhar) btn.classList.add('ativo');
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#alinharBotoes .alinhar-btn').forEach(function (b) { b.classList.toggle('ativo', b === btn); });
+        state.alinhar = btn.getAttribute('data-align');
+        renderPrevia();
+        agendarSalvar();
+      });
+    });
+
+    document.querySelectorAll('.alvo button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.alvo button').forEach(function (b) { b.classList.toggle('ativo', b === btn); });
+        alvo = btn.getAttribute('data-target');
+        renderControles();
+      });
+    });
+
+    document.getElementById('weightRange').addEventListener('input', function (e) {
+      state[alvo].weight = Number(e.target.value);
+      renderControles();
+      renderPrevia();
+      agendarSalvar();
+    });
+    document.getElementById('sizeRange').addEventListener('input', function (e) {
+      state[alvo].fontSize = Number(e.target.value);
+      renderControles();
+      renderPrevia();
+      agendarSalvar();
+    });
+    document.getElementById('trackingRange').addEventListener('input', function (e) {
+      state[alvo].letterSpacing = Number(e.target.value);
+      renderControles();
+      renderPrevia();
+      agendarSalvar();
+    });
+    document.getElementById('leadingRange').addEventListener('input', function (e) {
+      state[alvo].lineHeight = Number(e.target.value);
+      renderControles();
+      renderPrevia();
+      agendarSalvar();
+    });
+    document.getElementById('widthRange').addEventListener('input', function (e) {
+      state.blocoLargura = Number(e.target.value);
+      renderControles();
+      renderLayout();
+      agendarSalvar();
+    });
+  }
+
+  montarRoda();
+  renderControles();
+  renderPrevia();
+  renderLayout();
+  attach();
+  scrollRodaPara(state[alvo].font, false);
+  setTimeout(atualizarRodaAtiva, 50);
+  carregarEstado();
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () { navigator.serviceWorker.register('./sw.js'); });
+  }
+})();
+</script>
+<script src="/pwa-install.js"></script><script>
+(function(){
+  function send(){try{if(window.parent!==window)window.parent.postMessage({source:"lell-color",color:getComputedStyle(document.body).backgroundColor},"*")}catch(e){}}
+  if (document.readyState === "complete" || document.readyState === "interactive") { send(); } else { window.addEventListener("DOMContentLoaded", send); }
+  window.addEventListener("load", send);
+  new MutationObserver(send).observe(document.documentElement, {attributes:true, attributeFilter:["class","style","data-theme","data-mode"]});
+  new MutationObserver(send).observe(document.body, {attributes:true, attributeFilter:["class","style","data-theme","data-mode"]});
+})();
+</script>
+</body>
+</html>
